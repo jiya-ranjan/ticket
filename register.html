@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/premium-photo/famous-monuments-world_117023-91.jpg?w=2000'); /* Replace 'your-background-image.jpg' with your image file path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .registration-container {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            padding: 20px;
+            width: 400px;
+        }
+
+        .registration-steps {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .registration-steps button {
+            background-color: hsl(213, 75%, 47%);
+            color: #eee9e9;
+            border:rgb(20, 18, 18);
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .registration-section {
+            display: none;
+        }
+
+        .registration-section.active {
+            display: block; /* Set the initial display to 'block' */
+        }
+
+        h2 {
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #0a0f14;
+        }
+
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+       
+        input:focus {
+            border-color: #0a0f14; /* Border color on focus */
+            box-shadow: 0 0 5px #0a0f14; /* Box shadow on focus */
+        }
+
+
+        .registration-section input[type="date"] {
+            width: auto;
+        }
+
+        button[type="submit"]{
+            width: 99%; 
+            background-color: #0a0f14;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h1 style="text-align: center;color: darkmagenta;font-family: 'Times New Roman', Times, serif;">New User Registration</h1>
+        <div class="registration-steps">
+            <button onclick="showSection('basic-details')">Basic Details</button>
+            <button onclick="showSection('personal-details')">Personal Details</button>
+            <button onclick="showSection('account-details')">Account Details</button>
+        </div>
+        <form action="registration_process.php" method="post">
+            <div class="registration-section active" id="basic-details">
+                <h2>Basic Details</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="registration-section" id="personal-details">
+                <h2>Personal Details</h2>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="registration-section" id="account-details">
+                <h2>Account Details</h2>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="security-question">Security Question:</label>
+                <input type="text" id="security-question" name="security-question">
+            </div>
+            <button type="submit">Register</button>
+            <a href="dash.html">next</a>
+
+        </form>
+    </div>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('registration-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

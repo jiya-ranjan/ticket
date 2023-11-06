@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://getwallpapers.com/wallpaper/full/f/4/6/193502.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position:center center;
+            margin: 0;
+            padding: 0;
+
+            font-family: Arial, sans-serif;
+            background-color: transparent;
+            margin: 20;
+            padding: 10;
+        }
+
+        header {
+            background-color:transparent;
+            color: #f20b0b;
+            text-align:left;
+            padding: 50px 0;
+            position: relative;
+        }
+        header img {
+            width: 50px; /* Set the size of your logo */
+            position: absolute;
+            top: 20px; /* Adjust as needed for placement */
+            right: 800px; /* Adjust as needed for placement */
+        }
+        header h1{
+            margin-right:900px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+        }
+
+        .bus-selection {
+            background-color: rgba(139, 147, 151, 0.433 );
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px; /* Adjust the maximum width to your preference */
+            margin: 20px;
+        }
+        header img {
+            width: 50px; /* Set the size of your logo */
+            position: absolute;
+            top: 20px; /* Adjust as needed for placement */
+            left: 20px; /* Adjust as needed for placement */
+        }
+
+        .bus-selection h3 {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #07061a;
+            font-weight:900;
+        }
+
+        label, select, button {
+            display: block;
+            margin: 10px 0;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc1c1;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .bus-list {
+            background-color:transparent;
+            border: 1px solid transparent;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .bus-list h2 {
+            color: #333;
+        }
+
+        .booking {
+            background: rgba(139, 147, 151, 0.433);
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px; /* Adjust the maximum width to your preference */
+            margin-left: 20px;
+        }
+
+        .booking h2 {
+            color: #1a1414;
+        }
+
+        .ticket {
+            background-color:transparent;
+            border: 1px solid transparent;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .ticket h2 {
+            color:transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.pinimg.com/564x/6a/38/1a/6a381a5ba307aabcaa0cb3baface6b54.jpg" alt="Logo"> <!-- Replace 'logo.png' with the path to your logo -->
+        <h1>Bus Ticket Booking</h1>
+    </header>
+
+    <div class="bus-selection">
+        <h2>Select Your Route</h2>
+        <label for="from">From:</label>
+        <select id="from" name="from">
+            <option value="delhi">Delhi</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="bangalore">Bangalore</option>
+            <!-- Add more cities and routes -->
+        </select>
+
+        <label for="to">To:</label>
+        <select id="to" name="to">
+            <option value="kolkata">Kolkata</option>
+            <option value="chennai">Chennai</option>
+            <option value="hyderabad">Hyderabad</option>
+            <!-- Add more cities and routes -->
+        </select>
+
+        <button id="search-bus">Search Buses</button>
+    </div>
+
+    <div class="bus-list">
+        <!-- Display bus options, number of stops, timings, and seat availability -->
+        <!-- Use JavaScript to fetch and display this data dynamically -->
+    </div>
+
+    <div class="booking">
+        <h2>Book Your Tickets</h2>
+        <form>
+            <label for="passenger-name">Passenger Name:</label>
+            <input type="text" id="passenger-name" name="passenger-name" required>
+
+            <label for="number-of-tickets">Number of Tickets:</label>
+            <input type="number" id="number-of-tickets" name="number-of-tickets" min="1" max="5" required>
+
+            <button id="book-tickets">Book Tickets</button>
+        </form>
+    </div>
+
+    <div class="ticket">
+        <!-- Display detailed information about the booked journey and passenger -->
+        <!-- Use JavaScript to display this data after booking -->
+    </div>
+</body>
+</html>

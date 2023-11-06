@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Image with Three Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4efec;
+            text-align: center;
+            padding: 20px;
+            margin: 0; /* Remove default margin */
+        }
+
+        .background-container {
+            background: url('') center/cover no-repeat;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            background-position: center bottom ;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0); /* Box background color with opacity */
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center; /* Center the boxes horizontally */
+        }
+
+        .train {
+            position: absolute;
+            width: 550px;
+            height: 200px;
+            background-image: url('https://thumbs.dreamstime.com/b/colorful-family-train-railroad-25076850.jpg'); /* Add your train image */
+            background-size: cover;
+            animation: moveTrain 5s linear forwards; /* Animation for moving the train */
+            z-index: 1
+        }
+
+        @keyframes moveTrain {
+            from {
+                left: -150px; /* Initial position off the left side of the viewport */
+            }
+            to {
+                left: 100%; /* Final position off the right side of the viewport */
+            }
+        }
+
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #0a0f14;
+            color: #fff;
+            margin: 10px; /* Add margin between the boxes */
+            border-radius: 10px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            opacity: 0; /* Initially set opacity to 0 */
+            animation: fadeIn 1s ease-in-out 0.5s forwards; /* Animation for fade-in effect */
+            transition: transform 0.3s;
+        }
+        .box:hover {
+            transform: scale(1.1); /* Apply scale transformation on hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="train"></div>
+    <div class="background-container">
+        <div class="container">
+            <div class="box"><a href="cab.html">cab</a></div>
+            <div class="box"> <a href="train.html">train</a></div>
+            <div class="box"><a href="bus.html">bus</a></div>
+           
+        </div>
+    </div>
+</body>
+</html>
